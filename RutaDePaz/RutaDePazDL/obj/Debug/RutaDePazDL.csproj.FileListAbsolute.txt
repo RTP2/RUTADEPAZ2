@@ -1,0 +1,8 @@
+c:\users\luis\documents\visual studio 2013\Projects\RutaDePaz\RutaDePazDL\bin\RutaDePazDL.dll.config
+c:\users\luis\documents\visual studio 2013\Projects\RutaDePaz\RutaDePazDL\bin\RutaDePazDL.dll
+c:\users\luis\documents\visual studio 2013\Projects\RutaDePaz\RutaDePazDL\bin\RutaDePazDL.pdb
+c:\users\luis\documents\visual studio 2013\Projects\RutaDePaz\RutaDePazDL\bin\EntityFramework.dll
+c:\users\luis\documents\visual studio 2013\Projects\RutaDePaz\RutaDePazDL\bin\EntityFramework.xml
+c:\users\luis\documents\visual studio 2013\Projects\RutaDePaz\RutaDePazDL\obj\Debug\RutaDePazDL.csprojResolveAssemblyReference.cache
+c:\users\luis\documents\visual studio 2013\Projects\RutaDePaz\RutaDePazDL\obj\Debug\RutaDePazDL.dll
+c:\users\luis\documents\visual studio 2013\Projects\RutaDePaz\RutaDePazDL\obj\Debug\RutaDePazDL.pdb

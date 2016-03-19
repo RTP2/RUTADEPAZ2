@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="RutaDePazModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TBL_RPREGUNTA">
+          <Key>
+            <PropertyRef Name="IdPregunta" />
+          </Key>
+          <Property Name="IdPregunta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TipoPregunta" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Enunciado" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="TBL_RRESPUESTA">
+          <Key>
+            <PropertyRef Name="IdRespuesta" />
+          </Key>
+          <Property Name="IdRespuesta" Type="int" Nullable="false" />
+          <Property Name="IdPregunta" Type="int" Nullable="false" />
+          <Property Name="Correcta" Type="bit" Nullable="false" />
+          <Property Name="Respuesta" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="TBL_RRETROALIMENTACION">
+          <Key>
+            <PropertyRef Name="IdRetroalimentacion" />
+          </Key>
+          <Property Name="IdRetroalimentacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RetroAlimentacion" Type="varchar(max)" Nullable="false" />
+          <Property Name="IdPregunta" Type="int" />
+        </EntityType>
+        <Association Name="FK_TBL_RRespuestas_TBL_RRespuestas">
+          <End Role="TBL_RPREGUNTA" Type="Self.TBL_RPREGUNTA" Multiplicity="1" />
+          <End Role="TBL_RRESPUESTA" Type="Self.TBL_RRESPUESTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_RPREGUNTA">
+              <PropertyRef Name="IdPregunta" />
+            </Principal>
+            <Dependent Role="TBL_RRESPUESTA">
+              <PropertyRef Name="IdPregunta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_RRetroalimentacion_TBL_RPREGUNTA">
+          <End Role="TBL_RPREGUNTA" Type="Self.TBL_RPREGUNTA" Multiplicity="0..1" />
+          <End Role="TBL_RRETROALIMENTACION" Type="Self.TBL_RRETROALIMENTACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_RPREGUNTA">
+              <PropertyRef Name="IdPregunta" />
+            </Principal>
+            <Dependent Role="TBL_RRETROALIMENTACION">
+              <PropertyRef Name="IdPregunta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="RutaDePazModelStoreContainer">
+          <EntitySet Name="TBL_RPREGUNTA" EntityType="Self.TBL_RPREGUNTA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_RRESPUESTA" EntityType="Self.TBL_RRESPUESTA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_RRETROALIMENTACION" EntityType="Self.TBL_RRETROALIMENTACION" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_TBL_RRespuestas_TBL_RRespuestas" Association="Self.FK_TBL_RRespuestas_TBL_RRespuestas">
+            <End Role="TBL_RPREGUNTA" EntitySet="TBL_RPREGUNTA" />
+            <End Role="TBL_RRESPUESTA" EntitySet="TBL_RRESPUESTA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_RRetroalimentacion_TBL_RPREGUNTA" Association="Self.FK_TBL_RRetroalimentacion_TBL_RPREGUNTA">
+            <End Role="TBL_RPREGUNTA" EntitySet="TBL_RPREGUNTA" />
+            <End Role="TBL_RRETROALIMENTACION" EntitySet="TBL_RRETROALIMENTACION" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RutaDePazModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TBL_RPREGUNTA">
+          <Key>
+            <PropertyRef Name="IdPregunta" />
+          </Key>
+          <Property Name="IdPregunta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TipoPregunta" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Enunciado" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TBL_RRESPUESTA" Relationship="Self.FK_TBL_RRespuestas_TBL_RRespuestas" FromRole="TBL_RPREGUNTA" ToRole="TBL_RRESPUESTA" />
+          <NavigationProperty Name="TBL_RRETROALIMENTACION" Relationship="Self.FK_TBL_RRetroalimentacion_TBL_RPREGUNTA" FromRole="TBL_RPREGUNTA" ToRole="TBL_RRETROALIMENTACION" />
+        </EntityType>
+        <EntityType Name="TBL_RRESPUESTA">
+          <Key>
+            <PropertyRef Name="IdRespuesta" />
+          </Key>
+          <Property Name="IdRespuesta" Type="Int32" Nullable="false" />
+          <Property Name="IdPregunta" Type="Int32" Nullable="false" />
+          <Property Name="Correcta" Type="Boolean" Nullable="false" />
+          <Property Name="Respuesta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TBL_RPREGUNTA" Relationship="Self.FK_TBL_RRespuestas_TBL_RRespuestas" FromRole="TBL_RRESPUESTA" ToRole="TBL_RPREGUNTA" />
+        </EntityType>
+        <EntityType Name="TBL_RRETROALIMENTACION">
+          <Key>
+            <PropertyRef Name="IdRetroalimentacion" />
+          </Key>
+          <Property Name="IdRetroalimentacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RetroAlimentacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IdPregunta" Type="Int32" />
+          <NavigationProperty Name="TBL_RPREGUNTA" Relationship="Self.FK_TBL_RRetroalimentacion_TBL_RPREGUNTA" FromRole="TBL_RRETROALIMENTACION" ToRole="TBL_RPREGUNTA" />
+        </EntityType>
+        <Association Name="FK_TBL_RRespuestas_TBL_RRespuestas">
+          <End Role="TBL_RPREGUNTA" Type="Self.TBL_RPREGUNTA" Multiplicity="1" />
+          <End Role="TBL_RRESPUESTA" Type="Self.TBL_RRESPUESTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_RPREGUNTA">
+              <PropertyRef Name="IdPregunta" />
+            </Principal>
+            <Dependent Role="TBL_RRESPUESTA">
+              <PropertyRef Name="IdPregunta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_RRetroalimentacion_TBL_RPREGUNTA">
+          <End Role="TBL_RPREGUNTA" Type="Self.TBL_RPREGUNTA" Multiplicity="0..1" />
+          <End Role="TBL_RRETROALIMENTACION" Type="Self.TBL_RRETROALIMENTACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_RPREGUNTA">
+              <PropertyRef Name="IdPregunta" />
+            </Principal>
+            <Dependent Role="TBL_RRETROALIMENTACION">
+              <PropertyRef Name="IdPregunta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="RutaDePazEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TBL_RPREGUNTA" EntityType="Self.TBL_RPREGUNTA" />
+          <EntitySet Name="TBL_RRESPUESTA" EntityType="Self.TBL_RRESPUESTA" />
+          <EntitySet Name="TBL_RRETROALIMENTACION" EntityType="Self.TBL_RRETROALIMENTACION" />
+          <AssociationSet Name="FK_TBL_RRespuestas_TBL_RRespuestas" Association="Self.FK_TBL_RRespuestas_TBL_RRespuestas">
+            <End Role="TBL_RPREGUNTA" EntitySet="TBL_RPREGUNTA" />
+            <End Role="TBL_RRESPUESTA" EntitySet="TBL_RRESPUESTA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_RRetroalimentacion_TBL_RPREGUNTA" Association="Self.FK_TBL_RRetroalimentacion_TBL_RPREGUNTA">
+            <End Role="TBL_RPREGUNTA" EntitySet="TBL_RPREGUNTA" />
+            <End Role="TBL_RRETROALIMENTACION" EntitySet="TBL_RRETROALIMENTACION" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RutaDePazModelStoreContainer" CdmEntityContainer="RutaDePazEntities">
+          <EntitySetMapping Name="TBL_RPREGUNTA">
+            <EntityTypeMapping TypeName="RutaDePazModel.TBL_RPREGUNTA">
+              <MappingFragment StoreEntitySet="TBL_RPREGUNTA">
+                <ScalarProperty Name="IdPregunta" ColumnName="IdPregunta" />
+                <ScalarProperty Name="TipoPregunta" ColumnName="TipoPregunta" />
+                <ScalarProperty Name="Enunciado" ColumnName="Enunciado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_RRESPUESTA">
+            <EntityTypeMapping TypeName="RutaDePazModel.TBL_RRESPUESTA">
+              <MappingFragment StoreEntitySet="TBL_RRESPUESTA">
+                <ScalarProperty Name="IdRespuesta" ColumnName="IdRespuesta" />
+                <ScalarProperty Name="IdPregunta" ColumnName="IdPregunta" />
+                <ScalarProperty Name="Correcta" ColumnName="Correcta" />
+                <ScalarProperty Name="Respuesta" ColumnName="Respuesta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_RRETROALIMENTACION">
+            <EntityTypeMapping TypeName="RutaDePazModel.TBL_RRETROALIMENTACION">
+              <MappingFragment StoreEntitySet="TBL_RRETROALIMENTACION">
+                <ScalarProperty Name="IdRetroalimentacion" ColumnName="IdRetroalimentacion" />
+                <ScalarProperty Name="RetroAlimentacion" ColumnName="RetroAlimentacion" />
+                <ScalarProperty Name="IdPregunta" ColumnName="IdPregunta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,10 @@
+C:\Users\Luis\documents\visual studio 2013\Projects\RutaDePaz\RutaPazDL\bin\RutaPazDL.dll.config
+C:\Users\Luis\documents\visual studio 2013\Projects\RutaDePaz\RutaPazDL\bin\RutaPazDL.dll
+C:\Users\Luis\documents\visual studio 2013\Projects\RutaDePaz\RutaPazDL\bin\RutaPazDL.pdb
+C:\Users\Luis\documents\visual studio 2013\Projects\RutaDePaz\RutaPazDL\bin\EntityFramework.dll
+C:\Users\Luis\documents\visual studio 2013\Projects\RutaDePaz\RutaPazDL\bin\EntityFramework.SqlServer.dll
+C:\Users\Luis\documents\visual studio 2013\Projects\RutaDePaz\RutaPazDL\bin\EntityFramework.xml
+C:\Users\Luis\documents\visual studio 2013\Projects\RutaDePaz\RutaPazDL\bin\EntityFramework.SqlServer.xml
+C:\Users\Luis\documents\visual studio 2013\Projects\RutaDePaz\RutaPazDL\obj\Debug\RutaPazDL.csprojResolveAssemblyReference.cache
+C:\Users\Luis\documents\visual studio 2013\Projects\RutaDePaz\RutaPazDL\obj\Debug\RutaPazDL.dll
+C:\Users\Luis\documents\visual studio 2013\Projects\RutaDePaz\RutaPazDL\obj\Debug\RutaPazDL.pdb
