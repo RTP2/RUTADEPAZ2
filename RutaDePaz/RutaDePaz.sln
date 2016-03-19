@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RutaDePaz", "RutaDePaz\RutaDePaz.csproj", "{C98FED4D-5FA5-41FD-9718-409FCE3C8DDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RutaPazDL", "RutaPazDL\RutaPazDL.csproj", "{DBC67625-4747-4FA0-B56C-2AD8013D234C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RutaDL", "RutaDL\RutaDL.csproj", "{288A2D5A-B248-4B82-9EEA-FE88750A87FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{C98FED4D-5FA5-41FD-9718-409FCE3C8DDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C98FED4D-5FA5-41FD-9718-409FCE3C8DDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C98FED4D-5FA5-41FD-9718-409FCE3C8DDC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DBC67625-4747-4FA0-B56C-2AD8013D234C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DBC67625-4747-4FA0-B56C-2AD8013D234C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DBC67625-4747-4FA0-B56C-2AD8013D234C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DBC67625-4747-4FA0-B56C-2AD8013D234C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{288A2D5A-B248-4B82-9EEA-FE88750A87FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{288A2D5A-B248-4B82-9EEA-FE88750A87FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{288A2D5A-B248-4B82-9EEA-FE88750A87FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{288A2D5A-B248-4B82-9EEA-FE88750A87FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

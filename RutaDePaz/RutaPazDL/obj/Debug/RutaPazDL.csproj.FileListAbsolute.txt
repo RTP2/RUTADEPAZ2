@@ -15,6 +15,5 @@ D:\Archivos\Proyectos\Personal\RUTADEPAZ2\RutaDePaz\RutaPazDL\bin\EntityFramewor
 D:\Archivos\Proyectos\Personal\RUTADEPAZ2\RutaDePaz\RutaPazDL\bin\EntityFramework.SqlServer.dll
 D:\Archivos\Proyectos\Personal\RUTADEPAZ2\RutaDePaz\RutaPazDL\bin\EntityFramework.xml
 D:\Archivos\Proyectos\Personal\RUTADEPAZ2\RutaDePaz\RutaPazDL\bin\EntityFramework.SqlServer.xml
-D:\Archivos\Proyectos\Personal\RUTADEPAZ2\RutaDePaz\RutaPazDL\obj\Debug\RutaPazDL.csprojResolveAssemblyReference.cache
 D:\Archivos\Proyectos\Personal\RUTADEPAZ2\RutaDePaz\RutaPazDL\obj\Debug\RutaPazDL.dll
 D:\Archivos\Proyectos\Personal\RUTADEPAZ2\RutaDePaz\RutaPazDL\obj\Debug\RutaPazDL.pdb

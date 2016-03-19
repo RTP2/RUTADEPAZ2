@@ -279,9 +279,12 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RutaPazDL\RutaPazDL.csproj">
-      <Project>{dbc67625-4747-4fa0-b56c-2ad8013d234c}</Project>
-      <Name>RutaPazDL</Name>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RutaDL\RutaDL.csproj">
+      <Project>{288a2d5a-b248-4b82-9eea-fe88750a87fc}</Project>
+      <Name>RutaDL</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

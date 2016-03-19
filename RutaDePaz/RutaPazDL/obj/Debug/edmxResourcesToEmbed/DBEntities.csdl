@@ -27,7 +27,7 @@
       <PropertyRef Name="IdRespuesta" />
     </Key>
     <Property Name="IdRespuesta" Type="Int32" Nullable="false" />
-    <Property Name="IdPregunta" Type="Int32" Nullable="false" />
+    <Property Name="IdPregunta" Type="Int32" Nullable="false" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
     <Property Name="Correcta" Type="Boolean" Nullable="false" />
     <Property Name="Respuesta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="TBL_RPREGUNTA" Relationship="RutaDePazModel.FK_TBL_RRespuestas_TBL_RRespuestas" FromRole="TBL_RRESPUESTA" ToRole="TBL_RPREGUNTA" />
@@ -39,7 +39,7 @@
     </Key>
     <Property Name="IdRetroalimentacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="RetroAlimentacion" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="IdRespuesta" Type="Int32" />
+    <Property Name="IdRespuesta" Type="Int32" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
     <NavigationProperty Name="TBL_RRESPUESTA" Relationship="RutaDePazModel.FK_TBL_RRETROALIMENTACION_TBL_RRESPUESTA" FromRole="TBL_RRETROALIMENTACION" ToRole="TBL_RRESPUESTA" />
   </EntityType>
   <Association Name="FK_TBL_RRespuestas_TBL_RRespuestas">

@@ -16,7 +16,7 @@ namespace RutaPazDL
     {
         public int IdRetroalimentacion { get; set; }
         public string RetroAlimentacion { get; set; }
-        public Nullable<int> IdRespuesta { get; set; }
+        public Nullable<int> IdRespuesta { internal get; set; }
     
         public virtual TBL_RRESPUESTA TBL_RRESPUESTA { get; set; }
     }

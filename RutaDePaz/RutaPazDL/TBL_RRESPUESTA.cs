@@ -20,7 +20,7 @@ namespace RutaPazDL
         }
     
         public int IdRespuesta { get; set; }
-        public int IdPregunta { get; set; }
+        public int IdPregunta { internal get; set; }
         public bool Correcta { get; set; }
         public string Respuesta { get; set; }
     
