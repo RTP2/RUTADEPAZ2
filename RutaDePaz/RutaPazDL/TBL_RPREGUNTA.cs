@@ -17,7 +17,6 @@ namespace RutaPazDL
         public TBL_RPREGUNTA()
         {
             this.TBL_RRESPUESTA = new HashSet<TBL_RRESPUESTA>();
-            this.TBL_RRETROALIMENTACION = new HashSet<TBL_RRETROALIMENTACION>();
         }
     
         public int IdPregunta { get; set; }
@@ -25,6 +24,5 @@ namespace RutaPazDL
         public string Enunciado { get; set; }
     
         public virtual ICollection<TBL_RRESPUESTA> TBL_RRESPUESTA { get; set; }
-        public virtual ICollection<TBL_RRETROALIMENTACION> TBL_RRETROALIMENTACION { get; set; }
     }
 }

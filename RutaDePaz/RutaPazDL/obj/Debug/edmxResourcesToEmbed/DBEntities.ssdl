@@ -23,7 +23,7 @@
     </Key>
     <Property Name="IdRetroalimentacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="RetroAlimentacion" Type="varchar(max)" Nullable="false" />
-    <Property Name="IdPregunta" Type="int" />
+    <Property Name="IdRespuesta" Type="int" />
   </EntityType>
   <Association Name="FK_TBL_RRespuestas_TBL_RRespuestas">
     <End Role="TBL_RPREGUNTA" Type="Self.TBL_RPREGUNTA" Multiplicity="1" />
@@ -37,15 +37,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_TBL_RRetroalimentacion_TBL_RPREGUNTA">
-    <End Role="TBL_RPREGUNTA" Type="Self.TBL_RPREGUNTA" Multiplicity="0..1" />
+  <Association Name="FK_TBL_RRETROALIMENTACION_TBL_RRESPUESTA">
+    <End Role="TBL_RRESPUESTA" Type="Self.TBL_RRESPUESTA" Multiplicity="0..1" />
     <End Role="TBL_RRETROALIMENTACION" Type="Self.TBL_RRETROALIMENTACION" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="TBL_RPREGUNTA">
-        <PropertyRef Name="IdPregunta" />
+      <Principal Role="TBL_RRESPUESTA">
+        <PropertyRef Name="IdRespuesta" />
       </Principal>
       <Dependent Role="TBL_RRETROALIMENTACION">
-        <PropertyRef Name="IdPregunta" />
+        <PropertyRef Name="IdRespuesta" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -57,8 +57,8 @@
       <End Role="TBL_RPREGUNTA" EntitySet="TBL_RPREGUNTA" />
       <End Role="TBL_RRESPUESTA" EntitySet="TBL_RRESPUESTA" />
     </AssociationSet>
-    <AssociationSet Name="FK_TBL_RRetroalimentacion_TBL_RPREGUNTA" Association="Self.FK_TBL_RRetroalimentacion_TBL_RPREGUNTA">
-      <End Role="TBL_RPREGUNTA" EntitySet="TBL_RPREGUNTA" />
+    <AssociationSet Name="FK_TBL_RRETROALIMENTACION_TBL_RRESPUESTA" Association="Self.FK_TBL_RRETROALIMENTACION_TBL_RRESPUESTA">
+      <End Role="TBL_RRESPUESTA" EntitySet="TBL_RRESPUESTA" />
       <End Role="TBL_RRETROALIMENTACION" EntitySet="TBL_RRETROALIMENTACION" />
     </AssociationSet>
   </EntityContainer>

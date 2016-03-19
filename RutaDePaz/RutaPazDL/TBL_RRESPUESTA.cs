@@ -14,11 +14,17 @@ namespace RutaPazDL
     
     public partial class TBL_RRESPUESTA
     {
+        public TBL_RRESPUESTA()
+        {
+            this.TBL_RRETROALIMENTACION = new HashSet<TBL_RRETROALIMENTACION>();
+        }
+    
         public int IdRespuesta { get; set; }
         public int IdPregunta { get; set; }
         public bool Correcta { get; set; }
         public string Respuesta { get; set; }
     
         public virtual TBL_RPREGUNTA TBL_RPREGUNTA { get; set; }
+        public virtual ICollection<TBL_RRETROALIMENTACION> TBL_RRETROALIMENTACION { get; set; }
     }
 }

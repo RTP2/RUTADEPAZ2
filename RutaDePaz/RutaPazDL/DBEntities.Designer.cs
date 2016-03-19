@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Luis\documents\visual studio 2013\Projects\RutaDePaz\RutaPazDL\DBEntities.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\Archivos\Proyectos\Personal\RUTADEPAZ2\RutaDePaz\RutaPazDL\DBEntities.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
