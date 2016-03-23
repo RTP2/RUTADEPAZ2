@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <title>Swiper demo</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="css/fontkit/stylesheet.css" type="text/css" charset="utf-8" />
+</head>
+<body>
+
+    
+    <ul id="lst-preguntas">
+        <li>No hay preguntas para mostrar</li>
+        
+    </ul>
+    
+
+
+    <script src="js/vendor/jquery-1.11.0.min.js"></script>
+    <script src="js/constantes.js"></script>
+    <script>
+    $(function(){
+        $.ajax({
+            url: URL+'Pregunta',
+            type: 'get',
+            dataType : 'json',
+            success: function(data){
+                console.log(data);
+                var html = '';
+                $(data).each(function(i){
+                    var respuestas = this.TBL_RRESPUESTA;
+                    console.log(respuestas);
+                    html+= '<li id="Pregunta-'+
+                        this.IdPregunta+
+                        '" onclick="mostrarOpciones(\''+
+                        this.TipoPregunta+
+                        '\',' +
+                        respuestas +');">'+
+                        this.Enunciado+
+                        '</li>';  
+                });
+                $('#lst-preguntas').html(html);
+            }
+        });
+    });
+        
+        
+        function mostrarOpciones(tipoPregunta, opciones){
+            //Falso verdadero
+            if(tipoPregunta=='B'){
+                
+            }
+            //Seleccion multiple
+            else if(tipoPregunta=='U'){
+                
+            }            
+        }
+    </script>
+</body>
+</html>
