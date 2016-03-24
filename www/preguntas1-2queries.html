@@ -8,6 +8,18 @@
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="css/fontkit/stylesheet.css" type="text/css" charset="utf-8" />
     <style>
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            position: relative;
+            height: 100%;
+        }
         #pregunta-actual{
             position: absolute;
             margin: 0px 14px;
@@ -54,21 +66,30 @@
                 success: function(data){
                     console.log(data);
                     preguntas = data;
+                    window.localStorage.setItem('total_preguntas', preguntas.length);
                     armarPregunta();
                 }
             });
         });
         
         //Funcion que arma la estructura de las preguntas
-        var count = 1;
         function armarPregunta(){
+            //Verifico en que pregunta vamos
+            var actual = window.localStorage.getItem('currentQuestion');
+            //Si no existe es la primera y le asignamos 0
+            if(actual == null)
+            {
+                actual = 0;
+                window.localStorage.setItem('currentQuestion', actual);
+            }
             
-            var pregunta_actual = preguntas[count];
+            //Elegimos la pregunta a mostrar
+            var pregunta_actual = preguntas[actual];
             var enunciado = pregunta_actual.Enunciado;
             var tipoPregunta = pregunta_actual.TipoPregunta.trim();
             var opciones = '';
-                            opciones += '<ul>';
-
+            opciones += '<ul>';
+            //ARMAMOS LAS OPCIONES
             //Falso verdadero
             if(tipoPregunta=='B'){
                 $(pregunta_actual.TBL_RRESPUESTA).each(function(i){
@@ -105,7 +126,6 @@
             opciones += '</ul>';
             $('#pregunta-actual').html(enunciado);
             $('#opciones-pregunta').html(opciones);
-            count++;
         }
         
         //Verificamos la opción seleccionada de falso/verdaro

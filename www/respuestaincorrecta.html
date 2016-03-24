@@ -8,27 +8,59 @@
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="css/fontkit/stylesheet.css" type="text/css" charset="utf-8" />
     <style>
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            position: relative;
+            height: 100%;
+        }
+        
         #pregunta-actual{
             position: absolute;
-            margin: 0px 14px;
-            text-align: center;
-            top: 70px;
-        }      
+margin: 0px 14px;
+text-align: center;
+top: 70px;
+background: #fff;
+padding: 10px;
+border-radius: 15px;
+border-bottom: 7px solid #48c9b0;
+        }
+        #btn-atras{
+            top: 50%;
+right: 60px;
+position: absolute;
+            
+        }
     </style>
 </head>
 <body>
-<div> <img src="img/bgincorrecta.svg" width="100%"></div>
+<div> <img src="img/bgincorrecta.svg" width="100%"/></div>
     <!-- Div para mostrar la PREGUNTA ACTUAL -->
-    <div id="pregunta-actual">
+    <div id="pregunta-actual">    
+       <p id="p-retroalimentacion">
         :( Respuesta incorrecta
-    </div>
+        </p>
+            </div>
+
+        <div id="btn-atras" onclick="window.history.back();"><img src="img/btnatras.svg" width="150px"/></div>
+
 
     <script src="js/vendor/jquery-1.11.0.min.js"></script>
     <script src="js/constantes.js"></script>
     <script>
         $(function(){
             var retroalimentacion = localStorage.getItem('retroalimentacion');
-            $('#pregunta-actual').html(retroalimentacion);
+            var descripcion = retroalimentacion.split('-');
+            var titulo = '<h1>'+descripcion[0]+'</h1>';
+            var retro = descripcion[1];
+            var mostrar = titulo+retro;
+            $('#p-retroalimentacion').html(mostrar);
         });
     </script>
 </body>
