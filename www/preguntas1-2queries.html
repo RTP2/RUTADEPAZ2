@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head>
     <meta charset="utf-8">
-    <title>Swiper demo</title>
+    <title>Preguntas</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     
@@ -14,7 +14,7 @@
             text-align: center;
             top: 70px;
         }
-        #opciones-pregunta li{
+        #opciones-pregunta li, .chk-rsp{
             border: 3px #48c9b0 solid;
             border-radius: 5px;
             -moz-border-radius: 5px%;
@@ -59,33 +59,71 @@
             });
         });
         
-        var count = 0;
+        //Funcion que arma la estructura de las preguntas
+        var count = 1;
         function armarPregunta(){
             
             var pregunta_actual = preguntas[count];
             var enunciado = pregunta_actual.Enunciado;
             var tipoPregunta = pregunta_actual.TipoPregunta.trim();
-            var opciones = '<ul>';
-            
-            //Falso verdaderoa
+            var opciones = '';
+                            opciones += '<ul>';
+
+            //Falso verdadero
             if(tipoPregunta=='B'){
                 $(pregunta_actual.TBL_RRESPUESTA).each(function(i){
-                    opciones += '<li onclick="">'+this.Respuesta+'</li>';
+                    //Se arma cada opcion de falso -  verdaro
+                    opciones += '<li onclick="verificarRespuestaBool('
+                        +this.Correcta
+                        +',\''
+                        +this.TBL_RRETROALIMENTACION[0].RetroAlimentacion
+                        +'\');">'
+                        +this.Respuesta
+                        +'</li>';
                 });
+                
             }
+
             //Seleccion multiple
             else if(tipoPregunta=='U'){
                 $(pregunta_actual.TBL_RRESPUESTA).each(function(i){
-                    opciones += '<li>'+this.Respuesta+'</li>';
+                    //Se arma cada opcion de seleccion multilple
+                    //	<input type="checkbox" name="vehicle" value="Bike"> I have a bike<br>
+                    /*opciones += '<div class="chk-rsp"><label><input type="radio" name="respuesta" value="Bike">'
+                        +this.Respuesta
+                        +'</label><br/></div>';*/
+                    opciones += '<li onclick="verificarRespuestaBool('
+                        +this.Correcta
+                        +',\''
+                        +this.TBL_RRETROALIMENTACION[0].RetroAlimentacion
+                        +'\');">'
+                        +this.Respuesta
+                        +'</li>';
                 });
-            }
-            
+                //opciones += '<input type="button" value="Responder" onclick="verificarRadio();">'
+            }        
             opciones += '</ul>';
-            
             $('#pregunta-actual').html(enunciado);
             $('#opciones-pregunta').html(opciones);
             count++;
-        }        
+        }
+        
+        //Verificamos la opción seleccionada de falso/verdaro
+        function verificarRespuestaBool(correcta, retroalimentacion){
+            //Guardo la retroalimentacion para obtenerla en la página de respuesta
+            localStorage.setItem('retroalimentacion', retroalimentacion);
+            if(correcta){
+                window.location.href = 'respuestacorrecta.html';
+            }
+            else{
+                window.location.href = 'respuestaincorrecta.html';
+            }   
+        }
+        
+        function verificarRadio(){
+            
+            
+        }
     </script>
 </body>
 </html>

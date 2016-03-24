@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <title>Swiper demo</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="css/fontkit/stylesheet.css" type="text/css" charset="utf-8" />
+    <style>
+        #pregunta-actual{
+            position: absolute;
+            margin: 0px 14px;
+            text-align: center;
+            top: 70px;
+        }
+
+    </style>
+</head>
+<body>
+<div> <img src="img/bgcorrecta.svg" width="100%"></div>
+    <!-- Div para mostrar la PREGUNTA ACTUAL -->
+    <div id="pregunta-actual">
+        :) Respuesta Correcta!
+    </div>
+    
+   
+    
+
+
+    <script src="js/vendor/jquery-1.11.0.min.js"></script>
+    <script src="js/constantes.js"></script>
+    <script>
+        $(function(){
+            
+            var retroalimentacion = localStorage.getItem('retroalimentacion');
+            $('#pregunta-actual').html(retroalimentacion);
+        });
+        
+    </script>
+</body>
+</html>
