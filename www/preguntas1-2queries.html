@@ -7,56 +7,85 @@
     
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="css/fontkit/stylesheet.css" type="text/css" charset="utf-8" />
+    <style>
+        #pregunta-actual{
+            position: absolute;
+            margin: 0px 14px;
+            text-align: center;
+            top: 70px;
+        }
+        #opciones-pregunta li{
+            border: 3px #48c9b0 solid;
+            border-radius: 5px;
+            -moz-border-radius: 5px%;
+            -webkit-border-radius: 5px%;
+            padding: 10px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        ul{
+            list-style: none;
+            margin-left: -35px;
+        }
+    </style>
 </head>
 <body>
-
+<div> <img src="img/pregunta.svg" width="100%"></div>
+    <!-- Div para mostrar la PREGUNTA ACTUAL -->
+    <div id="pregunta-actual">
+        No hay preguntas para mostrar
+    </div>
     
-    <ul id="lst-preguntas">
-        <li>No hay preguntas para mostrar</li>
-        
-    </ul>
+    <div id="opciones-pregunta"></div>
     
 
 
     <script src="js/vendor/jquery-1.11.0.min.js"></script>
     <script src="js/constantes.js"></script>
     <script>
-    $(function(){
-        $.ajax({
-            url: URL+'Pregunta',
-            type: 'get',
-            dataType : 'json',
-            success: function(data){
-                console.log(data);
-                var html = '';
-                $(data).each(function(i){
-                    var respuestas = this.TBL_RRESPUESTA;
-                    console.log(respuestas);
-                    html+= '<li id="Pregunta-'+
-                        this.IdPregunta+
-                        '" onclick="mostrarOpciones(\''+
-                        this.TipoPregunta+
-                        '\',' +
-                        respuestas +');">'+
-                        this.Enunciado+
-                        '</li>';  
-                });
-                $('#lst-preguntas').html(html);
-            }
+        //Variable para almacenar y llamar las preguntas
+        var preguntas;
+        $(function(){
+            //Se consultan las preguntas del servidor 
+            $.ajax({
+                url: URL+'Pregunta',
+                type: 'get',
+                dataType : 'json',
+                success: function(data){
+                    console.log(data);
+                    preguntas = data;
+                    armarPregunta();
+                }
+            });
         });
-    });
         
-        
-        function mostrarOpciones(tipoPregunta, opciones){
-            //Falso verdadero
+        var count = 0;
+        function armarPregunta(){
+            
+            var pregunta_actual = preguntas[count];
+            var enunciado = pregunta_actual.Enunciado;
+            var tipoPregunta = pregunta_actual.TipoPregunta.trim();
+            var opciones = '<ul>';
+            
+            //Falso verdaderoa
             if(tipoPregunta=='B'){
-                
+                $(pregunta_actual.TBL_RRESPUESTA).each(function(i){
+                    opciones += '<li onclick="">'+this.Respuesta+'</li>';
+                });
             }
             //Seleccion multiple
             else if(tipoPregunta=='U'){
-                
-            }            
-        }
+                $(pregunta_actual.TBL_RRESPUESTA).each(function(i){
+                    opciones += '<li>'+this.Respuesta+'</li>';
+                });
+            }
+            
+            opciones += '</ul>';
+            
+            $('#pregunta-actual').html(enunciado);
+            $('#opciones-pregunta').html(opciones);
+            count++;
+        }        
     </script>
 </body>
 </html>

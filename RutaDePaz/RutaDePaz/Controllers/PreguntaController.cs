@@ -17,6 +17,10 @@ namespace RutaDePaz.Controllers
         private RutaDePazEntities db = new RutaDePazEntities();
 
         // GET: api/Pregunta
+        /// <summary>
+        
+        /// </summary>
+        /// <returns></returns>
         public IQueryable<TBL_RPREGUNTA> GetTBL_RPREGUNTA()
         {
             return db.TBL_RPREGUNTA;

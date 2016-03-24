@@ -1,13 +1,11 @@
+//Url de invocacion del web api
 var URL = 'http://localhost:11638/api/';
 
 
 
 
 
-
-
-
-
+//Configuracion de errores de ajax
 //===========================================
 $(function(){
     $.ajaxSetup({
