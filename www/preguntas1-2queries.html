@@ -56,7 +56,7 @@
     <script src="js/constantes.js"></script>
     <script>
         //Variable para almacenar y llamar las preguntas
-        var preguntas; //= JSON.parse(window.localStorage.getItem('preguntas'));
+        var preguntas;// = JSON.parse(window.localStorage.getItem('preguntas'));
         $(function(){
             //Se consultan las preguntas del servidor 
             if(preguntas==null){
@@ -71,6 +71,7 @@
                         window.localStorage.setItem('preguntas', JSON.stringify(preguntas));
                         armarPregunta();
                     }
+                    
                 });
             }
             else{
