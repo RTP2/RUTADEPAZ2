@@ -1,6 +1,6 @@
 //Url de invocacion del web api
-var URL = 'http://localhost:11638/api/';
-
+var URL = //'http://localhost:11638/api/';
+'http://www.cautiva.somee.com/api/';
 
 
 

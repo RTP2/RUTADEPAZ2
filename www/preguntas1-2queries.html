@@ -56,28 +56,35 @@
     <script src="js/constantes.js"></script>
     <script>
         //Variable para almacenar y llamar las preguntas
-        var preguntas;
+        var preguntas; //= JSON.parse(window.localStorage.getItem('preguntas'));
         $(function(){
             //Se consultan las preguntas del servidor 
-            $.ajax({
-                url: URL+'Pregunta',
-                type: 'get',
-                dataType : 'json',
-                success: function(data){
-                    console.log(data);
-                    preguntas = data;
-                    window.localStorage.setItem('total_preguntas', preguntas.length);
-                    armarPregunta();
-                }
-            });
+            if(preguntas==null){
+                $.ajax({
+                    url: URL+'Pregunta',
+                    type: 'get',
+                    dataType : 'json',
+                    success: function(data){
+                        console.log(data);
+                        preguntas = data;
+                        window.localStorage.setItem('total_preguntas', preguntas.length);
+                        window.localStorage.setItem('preguntas', JSON.stringify(preguntas));
+                        armarPregunta();
+                    }
+                });
+            }
+            else{
+                armarPregunta();
+            }
         });
         
         //Funcion que arma la estructura de las preguntas
         function armarPregunta(){
             //Verifico en que pregunta vamos
             var actual = window.localStorage.getItem('currentQuestion');
+            console.log(actual);
             //Si no existe es la primera y le asignamos 0
-            if(actual == null)
+            if(actual == null || actual == 'NaN')
             {
                 actual = 0;
                 window.localStorage.setItem('currentQuestion', actual);
