@@ -40,13 +40,8 @@ border-bottom: 7px solid #48c9b0;
     </style>
 </head>
 <body>
-<div>
-    <!-- Div para mostrar la PREGUNTA ACTUAL -->
-    <div id="pregunta-actual">
-       <p id="p-retroalimentacion">
-            Felicitaciones has terminado completamente la evaluación
-        </p>
-    </div>
+
+   <div> <img onclick="volver_pantalla_preguntas();" src="img/pantalla_felicitaciones.svg" width="100%"/></div>
     
    
     
@@ -55,6 +50,11 @@ border-bottom: 7px solid #48c9b0;
     <script src="js/vendor/jquery-1.11.0.min.js"></script>
     <script src="js/constantes.js"></script>
     <script>
+        function volver_pantalla_preguntas(){
+            alert("Muchas gracias por usar nuestra aplicación.");
+            window.location.href="preguntas1-2queries.html";
+            
+        }
     </script>
 </body>
 </html>
