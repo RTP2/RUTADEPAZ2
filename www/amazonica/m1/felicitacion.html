@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <title>Swiper demo</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="../../css/fontkit/stylesheet.css" type="text/css" charset="utf-8" />
+    <style>
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            position: relative;
+            height: 100%;
+        }
+        
+        #pregunta-actual{
+            position: absolute;
+margin: 0px 14px;
+text-align: center;
+top: 70px;
+background: #fff;
+padding: 10px;
+border-radius: 15px;
+border-bottom: 7px solid #48c9b0;
+        }
+        #btn-siguiente{
+            top: 50%;
+            right: 60px;
+            position: absolute;    
+        }
+    </style>
+</head>
+<body>
+
+   <div> <img onclick="volver_pantalla_preguntas();" src="img/pantalla_felicitaciones.svg" width="100%"/></div>
+    
+   
+    
+
+
+    <script src="../../js/vendor/jquery-1.11.0.min.js"></script>
+    <script src="../../js/constantes.js"></script>
+    <script>
+        function volver_pantalla_preguntas(){
+            alert("Muchas gracias por usar nuestra aplicación.");
+            window.location.href="preguntas1-2queries.html";
+            
+        }
+    </script>
+</body>
+</html>

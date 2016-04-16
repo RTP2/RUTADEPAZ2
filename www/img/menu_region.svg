@@ -1,65 +1,7 @@
-<!DOCTYPE html>
-<html lang="en"><head>
-    <meta charset="utf-8">
-    <title>Swiper demo</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-    
-    <!-- Link Swiper's CSS -->
-    <link rel="stylesheet" href="dist/css/swiper.min.css">
-    <link rel="stylesheet" href="css/fontkit/stylesheet.css" type="text/css" charset="utf-8" />
-
-    <!-- Demo styles -->
-    <style>
-    html, body {
-        position: relative;
-        height: 100%;
-    }
-    body {
-        background: #eee;
-        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-        font-size: 14px;
-        color:#000;
-        margin: 0;
-        padding: 0;
-    }
-    .swiper-container {
-        width: 100%;
-        height: 100%;
-    }
-    .swiper-slide {
-        text-align: center;
-        font-size: 18px;
-        background: #fff;
-
-        /* Center slide text vertically */
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        -webkit-justify-content: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        -webkit-align-items: center;
-        align-items: center;
-    }
-	 svg {
-      display:block; position:absolute;
-      top:1%; left:1%; width:99%; height:99%;
-    }
-    </style>
-</head>
-<body>
-
-<!-- Swiper -->
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-           <div class="swiper-slide" style="background-color:#e6e6e6">
-           
-           <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="190.5mm" height="338.667mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X7 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="190.5mm" height="338.667mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
 viewBox="0 0 19050 33867"
  xmlns:xlink="http://www.w3.org/1999/xlink">
  <defs>
@@ -134,7 +76,7 @@ viewBox="0 0 19050 33867"
   <metadata id="CorelCorpID_0Corel-Layer"/>
   <rect class="fil0" width="19050" height="33867"/>
   <g id="_603661916048">
-   <a xlink:href="amazonica/m1">
+   <a xlink:href="amazonica">
     <path class="fil1" d="M14859 10485c0,-194 -197,-353 -437,-353l-9826 0c-240,0 -437,159 -437,353l0 2271c0,194 197,353 437,353l9826 0c240,0 437,-159 437,-353l0 -2271z"/>
     <path class="fil2 str0" d="M14859 10485c0,-194 -197,-353 -437,-353l-9826 0c-240,0 -437,159 -437,353l0 2271c0,194 197,353 437,353l9826 0c240,0 437,-159 437,-353l0 -2271z"/>
     <g transform="matrix(1 0 0 1 -3818.68 -4848.61)">
@@ -157,7 +99,7 @@ viewBox="0 0 19050 33867"
    <text x="7241" y="6364" id="_03textohaciauncampo" class="fil6 fnt1">regiones:</text>
   </g>
   <g id="_603661922864">
-   <a xlink:href="andina/m1">
+   <a xlink:href="andina">
     <path class="fil1" d="M14859 14221c0,-194 -197,-353 -437,-353l-9826 0c-240,0 -437,159 -437,353l0 2271c0,194 197,353 437,353l9826 0c240,0 437,-159 437,-353l0 -2271z"/>
     <path class="fil2 str0" d="M14859 14221c0,-194 -197,-353 -437,-353l-9826 0c-240,0 -437,159 -437,353l0 2271c0,194 197,353 437,353l9826 0c240,0 437,-159 437,-353l0 -2271z"/>
     <g transform="matrix(1 0 0 1 -2446.93 -1121.12)">
@@ -171,7 +113,7 @@ viewBox="0 0 19050 33867"
    </a>
   </g>
   <g id="_603661924656">
-   <a xlink:href="cafetera/m1">
+   <a xlink:href="cafetera">
     <path class="fil1" d="M14859 17957c0,-194 -197,-353 -437,-353l-9826 0c-240,0 -437,159 -437,353l0 2271c0,194 197,352 437,352l9826 0c240,0 437,-158 437,-352l0 -2271z"/>
     <path class="fil2 str0" d="M14859 17957c0,-194 -197,-353 -437,-353l-9826 0c-240,0 -437,159 -437,353l0 2271c0,194 197,352 437,352l9826 0c240,0 437,-158 437,-352l0 -2271z"/>
     <g transform="matrix(1 0 0 1 -2972.34 2623.19)">
@@ -187,7 +129,7 @@ viewBox="0 0 19050 33867"
    </a>
   </g>
   <g id="_603661925232">
-   <a xlink:href="caribe/m1">
+   <a xlink:href="caribe">
     <path class="fil1" d="M14859 21693c0,-194 -197,-353 -437,-353l-9826 0c-240,0 -437,159 -437,353l0 2271c0,194 197,352 437,352l9826 0c240,0 437,-158 437,-352l0 -2271z"/>
     <path class="fil2 str0" d="M14859 21693c0,-194 -197,-353 -437,-353l-9826 0c-240,0 -437,159 -437,353l0 2271c0,194 197,352 437,352l9826 0c240,0 437,-158 437,-352l0 -2271z"/>
     <g transform="matrix(1 0 0 1 -2295.65 6359.07)">
@@ -201,7 +143,7 @@ viewBox="0 0 19050 33867"
    </a>
   </g>
   <g id="_603661926576">
-   <a xlink:href="orinoquia/m1">
+   <a xlink:href="orinoquia">
     <path class="fil1" d="M14859 25429c0,-194 -197,-353 -437,-353l-9826 0c-240,0 -437,159 -437,353l0 2270c0,194 197,353 437,353l9826 0c240,0 437,-159 437,-353l0 -2270z"/>
     <path class="fil2 str0" d="M14859 25429c0,-194 -197,-353 -437,-353l-9826 0c-240,0 -437,159 -437,353l0 2270c0,194 197,353 437,353l9826 0c240,0 437,-159 437,-353l0 -2270z"/>
     <g transform="matrix(1 0 0 1 -3485.31 9975.65)">
@@ -218,7 +160,7 @@ viewBox="0 0 19050 33867"
    </a>
   </g>
   <g id="_603661927152">
-   <a xlink:href="pacifica/m1">
+   <a xlink:href="pacifica">
     <path class="fil1" d="M14859 29165c0,-194 -197,-353 -437,-353l-9826 0c-240,0 -437,159 -437,353l0 2270c0,194 197,353 437,353l9826 0c240,0 437,-159 437,-353l0 -2270z"/>
     <path class="fil2 str0" d="M14859 29165c0,-194 -197,-353 -437,-353l-9826 0c-240,0 -437,159 -437,353l0 2270c0,194 197,353 437,353l9826 0c240,0 437,-159 437,-353l0 -2270z"/>
     <g transform="matrix(1 0 0 1 -2796.84 13832.8)">
@@ -234,25 +176,3 @@ viewBox="0 0 19050 33867"
   </g>
  </g>
 </svg>
-           
-           
-           </div>
-           
-        </div>
-        <!-- Add Pagination -->
-        
-</div>
-    
-
-<!-- Swiper JS -->
-    <script src="dist/js/swiper.min.js"></script>
-
-    <!-- Initialize Swiper -->
-    <script>
-    var swiper = new Swiper('.swiper-container', {
-        pagination: '.swiper-pagination',
-        paginationClickable: true
-    });
-    </script>
-</body>
-</html>
