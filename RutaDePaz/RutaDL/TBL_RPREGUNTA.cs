@@ -20,9 +20,11 @@ namespace RutaDL
         }
     
         public int IdPregunta { get; set; }
+        public Nullable<int> IdModulo { get; set; }
         public string TipoPregunta { get; set; }
         public string Enunciado { get; set; }
     
+        public virtual TBL_RMODULO TBL_RMODULO { get; set; }
         public virtual ICollection<TBL_RRESPUESTA> TBL_RRESPUESTA { get; set; }
     }
 }

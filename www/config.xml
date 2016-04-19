@@ -77,6 +77,9 @@
     <gap:splash gap:platform="ios" height="768" src="res/screen/ios/screen-ipad-landscape.png" width="1024" />
     <gap:splash gap:platform="winphone" src="res/screen/windows-phone/screen-portrait.jpg" />
     
+    
+    <gap:plugin name="nl.x-services.plugins.socialsharing" version="4.3.8" />
+    
     <access origin="*" />
 
     <content src="index.html" />

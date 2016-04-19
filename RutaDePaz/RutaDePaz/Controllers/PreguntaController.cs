@@ -17,13 +17,29 @@ namespace RutaDePaz.Controllers
         private RutaDePazEntities db = new RutaDePazEntities();
 
         // GET: api/Pregunta
-        /// <summary>
-        
-        /// </summary>
-        /// <returns></returns>
-        public IQueryable<TBL_RPREGUNTA> GetTBL_RPREGUNTA()
+        public object GetTBL_RPREGUNTA()
         {
-            return db.TBL_RPREGUNTA;
+            var a = (from pre in db.TBL_RPREGUNTA
+                     select new
+                     {
+                         pre.Enunciado,
+                         pre.TipoPregunta,
+                         Respuestas = (from res in db.TBL_RRESPUESTA
+                                       where res.IdPregunta == pre.IdPregunta
+                                       select new
+                                       {
+                                           res.Respuesta,
+                                           res.Correcta,
+                                           Retroalimentacion = (from ret in db.TBL_RRETROALIMENTACION
+                                                                where ret.IdRespuesta == res.IdRespuesta
+                                                                select ret.RetroAlimentacion)
+                                       }).ToList(),
+                         Felicitaciones = from mod in db.TBL_RMODULO
+                                          where mod.IdModulo == pre.IdModulo
+                                          select new { mod.FelicitacionModulo, mod.FelicitacionCompartir }
+
+                     }).ToList();
+            return a;
         }
 
         // GET: api/Pregunta/5

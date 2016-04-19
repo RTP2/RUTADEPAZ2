@@ -25,6 +25,7 @@ namespace RutaDL
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<TBL_RMODULO> TBL_RMODULO { get; set; }
         public virtual DbSet<TBL_RPREGUNTA> TBL_RPREGUNTA { get; set; }
         public virtual DbSet<TBL_RRESPUESTA> TBL_RRESPUESTA { get; set; }
         public virtual DbSet<TBL_RRETROALIMENTACION> TBL_RRETROALIMENTACION { get; set; }

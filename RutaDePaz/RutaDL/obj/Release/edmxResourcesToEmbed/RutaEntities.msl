@@ -1,31 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="RutaDePazModelStoreContainer" CdmEntityContainer="RutaDePazEntities">
+    <EntitySetMapping Name="TBL_RMODULO">
+      <EntityTypeMapping TypeName="RutaDePazModel.TBL_RMODULO">
+        <MappingFragment StoreEntitySet="TBL_RMODULO">
+          <ScalarProperty Name="FelicitacionCompartir" ColumnName="FelicitacionCompartir" />
+          <ScalarProperty Name="FelicitacionModulo" ColumnName="FelicitacionModulo" />
+          <ScalarProperty Name="NombreModulo" ColumnName="NombreModulo" />
+          <ScalarProperty Name="IdModulo" ColumnName="IdModulo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="TBL_RPREGUNTA">
       <EntityTypeMapping TypeName="RutaDePazModel.TBL_RPREGUNTA">
         <MappingFragment StoreEntitySet="TBL_RPREGUNTA">
-          <ScalarProperty Name="IdPregunta" ColumnName="IdPregunta" />
-          <ScalarProperty Name="TipoPregunta" ColumnName="TipoPregunta" />
           <ScalarProperty Name="Enunciado" ColumnName="Enunciado" />
+          <ScalarProperty Name="TipoPregunta" ColumnName="TipoPregunta" />
+          <ScalarProperty Name="IdModulo" ColumnName="IdModulo" />
+          <ScalarProperty Name="IdPregunta" ColumnName="IdPregunta" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TBL_RRESPUESTA">
       <EntityTypeMapping TypeName="RutaDePazModel.TBL_RRESPUESTA">
         <MappingFragment StoreEntitySet="TBL_RRESPUESTA">
-          <ScalarProperty Name="IdRespuesta" ColumnName="IdRespuesta" />
-          <ScalarProperty Name="IdPregunta" ColumnName="IdPregunta" />
-          <ScalarProperty Name="Correcta" ColumnName="Correcta" />
           <ScalarProperty Name="Respuesta" ColumnName="Respuesta" />
+          <ScalarProperty Name="Correcta" ColumnName="Correcta" />
+          <ScalarProperty Name="IdPregunta" ColumnName="IdPregunta" />
+          <ScalarProperty Name="IdRespuesta" ColumnName="IdRespuesta" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TBL_RRETROALIMENTACION">
       <EntityTypeMapping TypeName="RutaDePazModel.TBL_RRETROALIMENTACION">
         <MappingFragment StoreEntitySet="TBL_RRETROALIMENTACION">
-          <ScalarProperty Name="IdRetroalimentacion" ColumnName="IdRetroalimentacion" />
-          <ScalarProperty Name="RetroAlimentacion" ColumnName="RetroAlimentacion" />
           <ScalarProperty Name="IdRespuesta" ColumnName="IdRespuesta" />
+          <ScalarProperty Name="RetroAlimentacion" ColumnName="RetroAlimentacion" />
+          <ScalarProperty Name="IdRetroalimentacion" ColumnName="IdRetroalimentacion" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

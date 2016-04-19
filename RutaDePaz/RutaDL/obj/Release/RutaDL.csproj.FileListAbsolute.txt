@@ -7,3 +7,4 @@ D:\Archivos\Proyectos\Personal\RUTADEPAZ2\RutaDePaz\RutaDL\bin\Release\EntityFra
 D:\Archivos\Proyectos\Personal\RUTADEPAZ2\RutaDePaz\RutaDL\bin\Release\EntityFramework.SqlServer.xml
 D:\Archivos\Proyectos\Personal\RUTADEPAZ2\RutaDePaz\RutaDL\obj\Release\RutaDL.dll
 D:\Archivos\Proyectos\Personal\RUTADEPAZ2\RutaDePaz\RutaDL\obj\Release\RutaDL.pdb
+D:\Archivos\Proyectos\Personal\RUTADEPAZ2\RutaDePaz\RutaDL\obj\Release\RutaDL.csprojResolveAssemblyReference.cache

@@ -66,6 +66,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RutaEntities.edmx</DependentUpon>
     </Compile>
+    <Compile Include="TBL_RMODULO.cs">
+      <DependentUpon>RutaEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="TBL_RPREGUNTA.cs">
       <DependentUpon>RutaEntities.tt</DependentUpon>
     </Compile>
@@ -83,7 +86,9 @@
     </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.Config" />
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="RutaEntities.edmx.diagram">
       <DependentUpon>RutaEntities.edmx</DependentUpon>

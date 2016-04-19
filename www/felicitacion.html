@@ -37,6 +37,20 @@ border-bottom: 7px solid #48c9b0;
             right: 60px;
             position: absolute;    
         }
+        
+        .social.facebook {position: absolute;
+top: 0px;
+width: 50%;
+height: 70%;}
+                .social.twitter {position: absolute;
+top: 0px;
+                    right: 0;
+width: 50%;
+height: 70%;}
+        #volver{position: absolute;
+bottom: 0px;
+width: 100%;
+height: 30%;}
     </style>
 </head>
 <body>
@@ -45,7 +59,9 @@ border-bottom: 7px solid #48c9b0;
     
    
     
-
+    <div onclick="window.plugins.socialsharing.shareViaFacebook('Entre todos podemos, descarga esta nueva #app con la cual ayudamos a #denunciar hechos de #inseguridad en #Bogotá', null /* img */, 'http://www.yoalerto.com', function() {console.log('share ok')}, function(errormsg){$('#afui').popup({title:'Error al compartir',message:'Tu lugar ha sido agregado, ahora puedes verificarlo antes de desplazarte.',cancelText:'OK',cancelOnly: true});})" class="social facebook"></div>
+    <div onclick="window.plugins.socialsharing.shareViaTwitter('Entre todos podemos, descarga esta nueva #app con la cual ayudamos a #denunciar hechos de #inseguridad en #Bogotá', null /* img */, 'http://www.yoalerto.com')" class="social twitter"></div>
+    <div onclick="volver_pantalla_preguntas()" id="volver"></div>
 
     <script src="js/vendor/jquery-1.11.0.min.js"></script>
     <script src="js/constantes.js"></script>

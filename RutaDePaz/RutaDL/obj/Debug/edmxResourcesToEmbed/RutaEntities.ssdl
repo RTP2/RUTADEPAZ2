@@ -1,10 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="RutaDePazModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TBL_RMODULO">
+    <Key>
+      <PropertyRef Name="IdModulo" />
+    </Key>
+    <Property Name="IdModulo" Type="int" Nullable="false" />
+    <Property Name="NombreModulo" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="FelicitacionModulo" Type="varchar" MaxLength="500" />
+    <Property Name="FelicitacionCompartir" Type="varchar" MaxLength="500" />
+  </EntityType>
   <EntityType Name="TBL_RPREGUNTA">
     <Key>
       <PropertyRef Name="IdPregunta" />
     </Key>
     <Property Name="IdPregunta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdModulo" Type="int" />
     <Property Name="TipoPregunta" Type="char" MaxLength="10" Nullable="false" />
     <Property Name="Enunciado" Type="varchar(max)" />
   </EntityType>
@@ -25,6 +35,18 @@
     <Property Name="RetroAlimentacion" Type="varchar(max)" Nullable="false" />
     <Property Name="IdRespuesta" Type="int" />
   </EntityType>
+  <Association Name="FK_TBL_RPREGUNTA_TBL_RMODULO">
+    <End Role="TBL_RMODULO" Type="Self.TBL_RMODULO" Multiplicity="0..1" />
+    <End Role="TBL_RPREGUNTA" Type="Self.TBL_RPREGUNTA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_RMODULO">
+        <PropertyRef Name="IdModulo" />
+      </Principal>
+      <Dependent Role="TBL_RPREGUNTA">
+        <PropertyRef Name="IdModulo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_TBL_RRespuestas_TBL_RRespuestas">
     <End Role="TBL_RPREGUNTA" Type="Self.TBL_RPREGUNTA" Multiplicity="1" />
     <End Role="TBL_RRESPUESTA" Type="Self.TBL_RRESPUESTA" Multiplicity="*" />
@@ -50,9 +72,14 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="RutaDePazModelStoreContainer">
+    <EntitySet Name="TBL_RMODULO" EntityType="Self.TBL_RMODULO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_RPREGUNTA" EntityType="Self.TBL_RPREGUNTA" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_RRESPUESTA" EntityType="Self.TBL_RRESPUESTA" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_RRETROALIMENTACION" EntityType="Self.TBL_RRETROALIMENTACION" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_TBL_RPREGUNTA_TBL_RMODULO" Association="Self.FK_TBL_RPREGUNTA_TBL_RMODULO">
+      <End Role="TBL_RMODULO" EntitySet="TBL_RMODULO" />
+      <End Role="TBL_RPREGUNTA" EntitySet="TBL_RPREGUNTA" />
+    </AssociationSet>
     <AssociationSet Name="FK_TBL_RRespuestas_TBL_RRespuestas" Association="Self.FK_TBL_RRespuestas_TBL_RRespuestas">
       <End Role="TBL_RPREGUNTA" EntitySet="TBL_RPREGUNTA" />
       <End Role="TBL_RRESPUESTA" EntitySet="TBL_RRESPUESTA" />
