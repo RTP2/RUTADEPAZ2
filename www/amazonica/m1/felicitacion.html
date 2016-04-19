@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     
     <!-- Link Swiper's CSS -->
-    <link rel="stylesheet" href="../../css/fontkit/stylesheet.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="css/fontkit/stylesheet.css" type="text/css" charset="utf-8" />
     <style>
         body {
             background: #eee;
@@ -31,11 +31,26 @@ padding: 10px;
 border-radius: 15px;
 border-bottom: 7px solid #48c9b0;
         }
+
         #btn-siguiente{
             top: 50%;
             right: 60px;
             position: absolute;    
         }
+        
+        .social.facebook {position: absolute;
+top: 0px;
+width: 50%;
+height: 70%;}
+                .social.twitter {position: absolute;
+top: 0px;
+                    right: 0;
+width: 50%;
+height: 70%;}
+        #volver{position: absolute;
+bottom: 0px;
+width: 100%;
+height: 30%;}
     </style>
 </head>
 <body>
@@ -44,10 +59,12 @@ border-bottom: 7px solid #48c9b0;
     
    
     
+    <div onclick="window.plugins.socialsharing.shareViaFacebook('Entre todos podemos, descarga esta nueva #app con la cual ayudamos a #denunciar hechos de #inseguridad en #Bogotá', null /* img */, 'http://www.yoalerto.com', function() {console.log('share ok')}, function(errormsg){$('#afui').popup({title:'Error al compartir',message:'Tu lugar ha sido agregado, ahora puedes verificarlo antes de desplazarte.',cancelText:'OK',cancelOnly: true});})" class="social facebook"></div>
+    <div onclick="window.plugins.socialsharing.shareViaTwitter('Entre todos podemos, descarga esta nueva #app con la cual ayudamos a #denunciar hechos de #inseguridad en #Bogotá', null /* img */, 'http://www.yoalerto.com')" class="social twitter"></div>
+    <div onclick="volver_pantalla_preguntas()" id="volver"></div>
 
-
-    <script src="../../js/vendor/jquery-1.11.0.min.js"></script>
-    <script src="../../js/constantes.js"></script>
+    <script src="js/vendor/jquery-1.11.0.min.js"></script>
+    <script src="js/constantes.js"></script>
     <script>
         function volver_pantalla_preguntas(){
             alert("Muchas gracias por usar nuestra aplicación.");

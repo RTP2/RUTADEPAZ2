@@ -56,7 +56,7 @@
     <script src="../../js/constantes.js"></script>
     <script>
         //Variable para almacenar y llamar las preguntas
-        var preguntas;   //= JSON.parse(window.localStorage.getItem('preguntas'));
+        var preguntas = JSON.parse(window.localStorage.getItem('preguntas'));
         $(function(){
             //Se consultan las preguntas del servidor 
             if(preguntas==null){
@@ -101,12 +101,12 @@
             //ARMAMOS LAS OPCIONES
             //Falso verdadero
             if(tipoPregunta=='B'){
-                $(pregunta_actual.TBL_RRESPUESTA).each(function(i){
+                $(pregunta_actual.Respuestas).each(function(i){
                     //Se arma cada opcion de falso -  verdaro
                     opciones += '<li onclick="verificarRespuestaBool('
                         +this.Correcta
                         +',\''
-                        +this.TBL_RRETROALIMENTACION[0].RetroAlimentacion
+                        +this.Retroalimentacion
                         +'\');">'
                         +this.Respuesta
                         +'</li>';
@@ -116,7 +116,7 @@
 
             //Seleccion multiple
             else if(tipoPregunta=='U'){
-                $(pregunta_actual.TBL_RRESPUESTA).each(function(i){
+                $(pregunta_actual.Respuestas).each(function(i){
                     //Se arma cada opcion de seleccion multilple
                     //	<input type="checkbox" name="vehicle" value="Bike"> I have a bike<br>
                     /*opciones += '<div class="chk-rsp"><label><input type="radio" name="respuesta" value="Bike">'
@@ -125,7 +125,7 @@
                     opciones += '<li onclick="verificarRespuestaBool('
                         +this.Correcta
                         +',\''
-                        +this.TBL_RRETROALIMENTACION[0].RetroAlimentacion
+                        +this.Retroalimentacion
                         +'\');">'
                         +this.Respuesta
                         +'</li>';
