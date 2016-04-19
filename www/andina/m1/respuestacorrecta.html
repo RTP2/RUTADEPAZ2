@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <title>Swiper demo</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="../../css/fontkit/stylesheet.css" type="text/css" charset="utf-8" />
+    <style>
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            position: relative;
+            height: 100%;
+        }
+        
+        #pregunta-actual{
+            position: absolute;
+margin: 0px 14px;
+text-align: center;
+top: 50px;
+background: #fff;
+padding: 10px;
+border-radius: 15px;
+border-bottom: 7px solid #48c9b0;
+        }
+
+        #btn-siguiente{
+            top: 50%;
+            right: 60px;
+            position: absolute;    
+        }
+    </style>
+</head>
+<body>
+<div> <img src="img/bgcorrecta.svg" width="100%"></div>
+    <!-- Div para mostrar la PREGUNTA ACTUAL -->
+    <div id="pregunta-actual">
+       <p id="p-retroalimentacion">
+            :) Respuesta Correcta!
+        </p>
+    </div>
+    
+   <div id="btn-siguiente" onclick="volverMostrarSiguientePregunta();"><img src="img/btnsiguiente.svg" width="150px"/></div>
+    
+
+
+    <script src="../../js/vendor/jquery-1.11.0.min.js"></script>
+    <script src="../../js/constantes.js"></script>
+    <script>
+        $(function(){
+            var retroalimentacion = localStorage.getItem('retroalimentacion');
+            var descripcion = retroalimentacion.split('-');
+            var titulo = '<h1>'+descripcion[0]+'</h1>';
+            var retro = descripcion[1];
+            var mostrar = titulo+retro;
+            $('#p-retroalimentacion').html(mostrar);
+        });
+        
+        //Volvemos a la página de preguntas a armar la siguiente estructura
+        function volverMostrarSiguientePregunta(){
+            var actual = window.localStorage.getItem('currentQuestion');
+            var total_preguntas = window.localStorage.getItem('total_preguntas');
+            var siguiente = parseInt(actual)+1;
+            if(siguiente>=total_preguntas)
+            {   
+                //alert('No hay mas preguntas por hacer');
+                window.localStorage.removeItem('currentQuestion');
+                window.location.href = 'felicitacion.html';
+            }
+            else{
+                localStorage.setItem('currentQuestion', siguiente);
+                window.location.href = 'preguntas1-2queries.html';
+            }
+        }
+    </script>
+</body>
+</html>
